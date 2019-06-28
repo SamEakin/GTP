@@ -1,3 +1,5 @@
-public static void main() {
-	System.out.println("Hello World");
+class hello-world {
+	public static void main() {
+		System.out.println("Hello World");
+	}
 }
