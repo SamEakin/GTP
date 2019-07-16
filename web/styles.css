@@ -1,0 +1,21 @@
+body { 
+	background-color: powderblue;
+}
+p { 
+	background-color: green;
+}
+h2 { 
+	background-color: yellow;
+	align: center;
+}
+
+th {
+	color: blue;
+}
+
+ 
+
+#pic {
+	height: 20%;
+	width: 20%;
+}

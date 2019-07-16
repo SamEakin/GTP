@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Assignment 2</title>
+	<meta charset = "utf-8"> 
+	<meta name = "viewport" content = "width=device-width, initial-scale=1">
+	<link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/4.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+	<div class = "container">
+		<h2>Inline Form Validation</h2>
+		<div id = "name-form" class = "form-inline">
+			<div class="row">
+				<fieldset>
+					<label for = "uname">First Name:</label>
+					<div class = "col">
+						<input type = "text" class = "form-control" id = "fname" placeholder="Enter first Name" required>
+						<div class="valid-feedback">Valid.</div>
+						<div class="invalid-feedback">Please fill out this field.</div>
+					</div>
+				</fieldset>
+
+				<fieldset>
+					<label for = "uname">Last Name:</label>
+					<div class = "col">
+						<input type = "text" class = "form-control" id = "lname" placeholder = "Enter last Name" required>
+						<div class = "valid-feedback">Valid.</div>
+						<div class = "invalid-feedback">Please fill out this field.</div>
+					</div>
+				</fieldset>
+
+				<fieldset>
+					<label for = "phone">Phone:</label>
+					<div class = "col">
+						<input type = "tel" class = "form-control" id = "phone" placeholder = "xxx-xxx-xxxx" required>
+						<div class = "valid-feedback">Valid.</div>
+						<div class = "invalid-feedback">Please fill out this field.</div>
+					</div>
+				</fieldset>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<button id = "submit-button" onclick = "submit()">Submit!</button>
+		<script>
+			function submit() {
+				var fn = document.getElementById("fname").value;
+				var ln = document.getElementById("lname").value;
+				var pn = document.getElementById("phone").value;
+				var reg = new RegExp('^[0-9]+$');
+				var submitOK = "true";
+
+				alert(fn + ln)
+
+				if (fn.length <= 1) {
+					alert("Please enter a valid First Name");
+					submitOK = "false";
+				}
+
+				if (ln.length <= 1) {
+					alert("Please enter a valid Last Name");
+					submitOK = "false";
+				}
+
+				if (reg.test(pn) == "false") {
+					alert("Please enter a valid phone number!");
+					submitOK = "false";
+				}
+
+				if (submitOK == "false") { return false; }
+
+				else if (submitOK == "true") {
+					alert("Are you sure you want to submit?");
+					document.getElementById("submit-button").innerHTML = "submitted!";
+					document.getElementById("name-form").innerHTML = "Thank you for submitting, "+fn+" "+ln;
+
+				}
+			}
+
+		</script>
+	</div>
+
+	</div>
+		<div class="container">
+		<nav>
+		  <ul class="pagination">
+		    <li class="page-item"><a class="page-link" href="p1.html">table</a></li>
+		    <li class="page-item"><a class="page-link" href="p2.html">canvas</a></li>
+		    <li class="page-item"><a class="page-link" href="p3.html">form</a></li>
+		  </ul>
+		</nav>
+	</div>
+</body>
+</html>

@@ -1,0 +1,6 @@
+3 simple pages
+banner on top of all 3 pages
+body: introduction
+footers
+iframe on page 2
+table on page 3 - name, id, hyperlink of some intro doc
